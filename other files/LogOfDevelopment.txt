@@ -1,0 +1,31 @@
+Log file of development efforts
+[creation date: 7-july-2014]
+
+
+June 2014:
+
+Background: after some progress in connecting to Access and MySQL simultaneously in ruby,
+ran into difficulties how to create foreign keys for records. Ran into Phil Battos at a
+Boulder Ruby (Pivotal Labs) user group meeting June 17, who suggested using Rails to solve this.
+
+That sounded like a good idea to me, and I started that direction....
+
+Then at a Hacker Hours (Viget) user group meeting June 24, I showed my work to Patrick,
+and he suggested reading the Access data into a CSV file using Ruby. Much to my surprise,
+this worked! (which took all of 4 lines of code...see WriteCVS.rb)
+
+Then I proceeded to build up the Rails models to write to the various tables needed in the
+Wikifrack DB...but then ran into development environment problems building the native extensions
+needed for Ruby to talk to MySQL...which took about a week to figure out.
+
+7-july
+
+As of tonight, can build the native extensions without error.
+
+8-july
+
+Went to Hacker Hours at Viget, spent most of time fixing errors in development environment on my Airbook.
+Finally got that corrected (native extensions compiled). Got some help from Nathaniel, an intern there, who
+showed me the Foreigner gem for handling creation of foreign keys during a CVS import.
+Also suggested using seeds.rb...and the Atom editor from Github.
+

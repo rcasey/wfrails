@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facility_num: 
+  facility_name: MyString
+  qtrqtr: MyString
+  sec: 
+  township: MyString
+  meridian: MyString
+  latitude: 
+  longitude: 
+  ground_elevation: 
+  utm_x: 
+  utm_y: 1
+
+two:
+  facility_num: 
+  facility_name: MyString
+  qtrqtr: MyString
+  sec: 
+  township: MyString
+  meridian: MyString
+  latitude: 
+  longitude: 
+  ground_elevation: 
+  utm_x: 
+  utm_y: 1

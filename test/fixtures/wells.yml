@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  well_name: 
+  api_county_code: 
+  api_seq_num: 
+  sidetrack_num: 
+  api_num: MyString
+  formation_code: MyString
+  spuddate: 
+  td_date: 
+  wb_meas_depth: 
+  wb_tvd: 
+  test_date: 
+  well_bore_status: MyString
+  status_date: 
+  first_prod_dat: MyString
+
+two:
+  well_name: 
+  api_county_code: 
+  api_seq_num: 
+  sidetrack_num: 
+  api_num: MyString
+  formation_code: MyString
+  spuddate: 
+  td_date: 
+  wb_meas_depth: 
+  wb_tvd: 
+  test_date: 
+  well_bore_status: MyString
+  status_date: 
+  first_prod_dat: MyString
