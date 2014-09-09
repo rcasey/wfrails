@@ -1,3 +1,7 @@
+Wikifrac Project Log
+
+July 2014
+
 Log file of development efforts
 [creation date: 7-july-2014]
 
@@ -18,9 +22,11 @@ Then I proceeded to build up the Rails models to write to the various tables nee
 Wikifrack DB...but then ran into development environment problems building the native extensions
 needed for Ruby to talk to MySQL...which took about a week to figure out.
 
+The tables, or models, were initially created using the shell script, mkmodels.sh
+
 7-july
 
-As of tonight, can build the native extensions without error.
+As of tonight, can build the native extensions without error on my home Mac.
 
 8-july
 
@@ -28,4 +34,17 @@ Went to Hacker Hours at Viget, spent most of time fixing errors in development e
 Finally got that corrected (native extensions compiled). Got some help from Nathaniel, an intern there, who
 showed me the Foreigner gem for handling creation of foreign keys during a CVS import.
 Also suggested using seeds.rb...and the Atom editor from Github.
+
+25-july
+
+wfrails/lib/tasks/import_partial.rake
+Have made progress on this Rake task that will populate the tables in the Wikifrac database. The greatest
+difficulty is how to populate the foreign keys. Hove tried to take the project to Hacker Hours meetings at
+the company Viget in Boulder, but have not been able to get my Ruby environment on my Airbook synched up
+with the project on my home Mac (same error I had before on home Mac, error build native gems)
+
+Having syntax errors in the task I don't understand...
+
+
+
 

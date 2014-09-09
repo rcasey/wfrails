@@ -1,0 +1,17 @@
+/bin:
+/usr/sbin:
+/sbin:
+/usr/local/bin:
+/usr/bin:
+/opt/X11/bin:
+/opt/sm/bin:
+/opt/sm/pkg/active/bin:
+/opt/sm/pkg/active/sbin:
+/opt/local/bin:
+/opt/local/sbin:
+/usr/local/apache/bin:
+/Library/PostgreSQL/8.4/bin:
+/opt/local/bin:
+/opt/local/sbin:
+/usr/local/apache/bin:
+/Library/PostgreSQL/8.4/bin

@@ -27,15 +27,12 @@ ActiveRecord::Schema.define(version: 20140716204011) do
   end
 
   create_table "facilities", force: true do |t|
-    t.integer  "facility_num"
     t.string   "facility_name",    limit: 50
-    t.string   "qtrqtr",           limit: 6
-    t.integer  "sec"
-    t.string   "township",         limit: 10
-    t.string   "meridian",         limit: 5
+    t.integer  "facility_num"
+    t.integer  "ground_elevation"
     t.decimal  "latitude",                    precision: 10, scale: 5, default: 0.0
     t.decimal  "longitude",                   precision: 10, scale: 5, default: 0.0
-    t.integer  "ground_elevation"
+    t.string   "meridian",         limit: 5
     t.integer  "utm_x"
     t.integer  "utm_y"
     t.datetime "created_at"
@@ -71,20 +68,29 @@ ActiveRecord::Schema.define(version: 20140716204011) do
   end
 
   create_table "wells", force: true do |t|
-    t.string   "well_name"
     t.integer  "api_county_code"
-    t.integer  "api_seq_num"
-    t.integer  "sidetrack_num"
     t.string   "api_num",          limit: 50
-    t.string   "formation_code",   limit: 10
-    t.date     "spuddate"
+    t.integer  "api_seq_num"
+    t.string   "dir_e_w",          limit: 10
+    t.string   "dir_n_s",          limit: 10
+    t.string   "dist_e_w",         limit: 10
+    t.string   "dist_n_s",         limit: 10
+    t.date     "first_prod_date"
+    t.date     "form_status_date"
+    t.string   "formation_status", limit: 10
+    t.string   "qtrqtr",           limit: 6
+    t.string   "range",            limit: 5
+    t.integer  "sec"
+    t.integer  "sidetrack_num"
+    t.date     "spud_date"
+    t.date     "status_date"
     t.date     "td_date"
+    t.date     "test_date"
+    t.string   "township",         limit: 10
     t.integer  "wb_meas_depth"
     t.integer  "wb_tvd"
-    t.date     "test_date"
     t.string   "well_bore_status", limit: 5
-    t.date     "status_date"
-    t.date     "first_prod_date"
+    t.string   "well_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "facility_id"
