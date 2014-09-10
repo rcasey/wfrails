@@ -50,12 +50,12 @@ desc "Imports the COGCC CSV file into wikifrac database"
 task :import_cogcc => :environment do
 
     require 'csv'
-    require 'pry'
+    #require 'pry'
     
     ndx = 0
     fldhrs = []
     
-    CSV.foreach('public/partial.csv', :headers => false) do |row|
+    CSV.foreach('public/alldata.csv', :headers => true) do |row|
     
         if ndx == 0
           fldhrs = row
@@ -73,10 +73,12 @@ task :import_cogcc => :environment do
           puts "-------- FIELD # #{index.to_s}, #{fldhrs[index]} -------"
           #puts "index: " + index.to_s + ", before: " + row[index].to_s + ", header: " + fldhrs[index]
           row[index] = get_value( row[index] )
-          puts "after " + row[index].to_s
+          puts "debugging: after " + row[index].to_s
           
         }
         
+print "debugging: row[name]: "
+puts row['name']
 
         # create the Company object
         this_company_name = row['name']
@@ -220,8 +222,8 @@ end
           status_date: status_date,
           td_date: td_date,
           test_date: test_date,
-          wbmeasdepth: wbmeasdepth,
-          wbtvd: wbtvd,
+          wb_meas_depth: wbmeasdepth,
+          wb_tvd: wbtvd,
           well_bore_status: well_bore_status,
           well_name: well_name,
           facility_id: the_facility_id,
