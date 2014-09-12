@@ -29,11 +29,11 @@ def get_value value
   begin
   
     # Debugging:
-    puts "in get_value: " + value.to_s
+    #puts "in get_value: " + value.to_s
   
     if value.nil?    
         rtnval = ""
-        puts 'Nil value detected here!'
+        #puts 'Nil value detected here!'
     end
   
   rescue
@@ -54,8 +54,9 @@ task :import_cogcc => :environment do
     
     ndx = 0
     fldhrs = []
+    recnum = 0
     
-    CSV.foreach('public/alldata.csv', :headers => true) do |row|
+    CSV.foreach('public/alldata_1.csv', :headers => true) do |row|
     
         if ndx == 0
           fldhrs = row
@@ -63,6 +64,9 @@ task :import_cogcc => :environment do
           ndx = ndx +1
           next
         end
+        
+        recnum = recnum + 1
+        puts "Importing rec#" + recnum.to_s 
 
         # create records in independent tables
         
@@ -70,15 +74,15 @@ task :import_cogcc => :environment do
 
         row.each_with_index {|val, index|          
           
-          puts "-------- FIELD # #{index.to_s}, #{fldhrs[index]} -------"
+          #puts "-------- FIELD # #{index.to_s}, #{fldhrs[index]} -------"
           #puts "index: " + index.to_s + ", before: " + row[index].to_s + ", header: " + fldhrs[index]
           row[index] = get_value( row[index] )
-          puts "debugging: after " + row[index].to_s
+          #puts "debugging: after " + row[index].to_s
           
         }
         
-print "debugging: row[name]: "
-puts row['name']
+        #print "debugging: row[name]: "
+        #puts row['name']
 
         # create the Company object
         this_company_name = row['name']
@@ -89,6 +93,8 @@ puts row['name']
         end
         thecompany = Companies.find_by(company_name: this_company_name)
         company_id = thecompany.id
+        
+puts "Company: " + this_company_name + ", id: " + company_id.to_s        
         
         # create the County object
         this_county_name = row['county']
@@ -179,10 +185,10 @@ puts row['name']
         # create the Wells object
         api_county_code = row['api_county_code']
                 
-puts 'testing row[api_num]...'
-if row['api_num'].nil?
-  puts 'row[api_num] is nil...'
-end
+#puts 'testing row[api_num]...'
+#if row['api_num'].nil?
+#  puts 'row[api_num] is nil...'
+#end
 
         api_num = row['api_num']
         api_seq_num = row['api_seq_num']

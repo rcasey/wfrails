@@ -45,6 +45,36 @@ with the project on my home Mac (same error I had before on home Mac, error buil
 
 Having syntax errors in the task I don't understand...
 
+9-sept-2014
+
+Finally! Breakthrough...
+
+I was very close to getting the import script (import_cogcc.rb) to work on my home machine, but was still encountering
+a few nagging syntax errors using the CSV class for importing, which is now built into Ruby 2.0. I wanted to go to Hacker
+Hours at Viget to see if I could get some help. But I was having trouble with my environment configuration on my Airbook, and
+still had problems (building native extensions, of course...) but I went anyway. 
+
+Patrick, leader of Viget Hacker Hours, helped me to solve the configuration problems (needed a correction on how shims were
+being used in the homebrew configuration of Ruby, and in the path), then I corrected a slight error in the import script
+(headers must be true, in the CSV statement that opens the csv file), and BOOM! The script worked!
+
+Informed Shane later that night.
+
+12-sept-2014
+
+Got a phone call back from Shane on 9/10. Will be meeting him and the investor he says that will back Wikifrac today.
+
+Am developing some reports that will test the data integrity of the import; but the data are importing, with these
+results of record counts in the 8 tables:
+
+ companies            3466 
+ counties               56 
+ facilities          30084
+ fields               1450
+ fields_formations       0
+ formations            437
+ gastypes               10
+ wells              143883
 
 
 
