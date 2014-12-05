@@ -1,0 +1,10 @@
+
+---
+companies:
+  columns:
+  - id
+  - company_name
+  - operator_num
+  - created_at
+  - updated_at
+  records: 

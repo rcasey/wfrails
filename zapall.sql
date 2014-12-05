@@ -1,7 +1,6 @@
 -- zapall.sql - truncates all tables in wikifrac database
 
 truncate companies;
-truncate companies;
 truncate counties;
 truncate facilities;
 truncate fields;

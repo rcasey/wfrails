@@ -13,10 +13,12 @@
 #  Wells
 #  
 # Dependendecies and foreign key field used to find correct record id:
-#  Facilities.company_id -> Companies.company_name
-#  Facilities.field_id   -> Fields.field_name
-#  Facilities.county_id  -> Counties.county_name
-#  Wells.gastype_id      -> Gastypes.gas_type
+#  Facilities.company_id          -> Companies.company_name
+#  Facilities.field_id            -> Fields.field_name
+#  Facilities.county_id           -> Counties.county_name
+#  Wells.gastype_id               -> Gastypes.gas_type
+#  Fields_formations.field_id     -> Fields.id
+#  Fields_formations.formation_id -> Formations.id
 #
 # when creating Wells record need to know id's for: Facility, Gastype
 # when creating Facilities record need to know id's for: Company, County, Field, Well
@@ -50,11 +52,13 @@ desc "Imports the COGCC CSV file into wikifrac database"
 task :import_cogcc => :environment do
 
     require 'csv'
-    #require 'pry'
+    require 'pry'
     
     ndx = 0
     fldhrs = []
     recnum = 0
+    
+    #binding.pry
     
     CSV.foreach('public/alldata_1.csv', :headers => true) do |row|
     
@@ -141,6 +145,7 @@ puts "Company: " + this_company_name + ", id: " + company_id.to_s
     
         # Now create records in dependent tables:
         # Use the record id's from above independent table create records containing foreign keys:
+        
         # for the Facilities record:
         #company_id
         #field_id
@@ -150,6 +155,12 @@ puts "Company: " + this_company_name + ", id: " + company_id.to_s
         #facilities_id
         #gastype_id
 
+        # test if the FieldsFormations record exists
+        if !(FieldsFormations.exists?(fields_id: field_id, formations_id: formation_id))
+          # if not, create the FieldsFormations record
+          FieldsFormations.create(fields_id: field_id, formations_id: formation_id)          
+        end
+        
               
         # create the Facilities object
         this_facility_name  = row['facility_name']

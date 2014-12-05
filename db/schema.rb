@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716204011) do
+ActiveRecord::Schema.define(version: 20141203042925) do
 
   create_table "companies", force: true do |t|
     t.string   "company_name", limit: 100
@@ -49,9 +49,11 @@ ActiveRecord::Schema.define(version: 20140716204011) do
     t.datetime "updated_at"
   end
 
-  create_table "fields_formations", id: false, force: true do |t|
-    t.integer "field_id",     null: false
-    t.integer "formation_id", null: false
+  create_table "fields_formations", force: true do |t|
+    t.integer  "fields_id"
+    t.integer  "formations_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "formations", force: true do |t|

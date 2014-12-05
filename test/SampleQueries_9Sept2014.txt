@@ -1,0 +1,75 @@
+Test Plan for data verification
+(sample queries shown to Mark Lichtey at a meeting w/ Shane, Rick and Mark at Unitarian Universalist Church
+on 9-sept-2014)
+
+-- a simple start at testing the data integrity of the import script, import_cogcc.rb
+
+Reports
+
+-- simple listings of the 8 tables:
+ 
+ companies            3466 
+ counties               56 
+ facilities          30084
+ fields               1450
+ fields_formations       0
+ formations            437
+ gastypes               10
+ wells              143883
+
+
+Commands to list data from tables:
+-----------------------------------
+
+select id,company_name from companies order by company_name;
+
+select id,county_name from counties order by county_name;
+
+select id, field_name, field_code from fields order by field_name;
+
+select id, formation, formation_code from formations order by formation;
+
+select id, gas_type from gastypes order by gas_type;
+
+select id,facility_name,facility_num,latitude,latitude,company_id,county_id,field_id from facilities order by facility_name;
+
+(do this in mysql before running next command: pager less)
+
+select id,well_name,facility_id,gastype_id from wells order by well_name;
+
+
+Test queries:
+-------------
+
+How many wells are there in Weld County?
+
+SQL:
+
+select count(*) from wells w, counties c, facilities f
+where c.county_name = 'WELD'
+and w.facility_id = f.id
+and f.county_id = c.id;
+
+List the well names & lat/longs for wells in Weld County?
+
+SQL: 
+
+select well_name,latitude,longitude
+from wells w, counties c, facilities f
+where c.county_name = 'WELD'
+and w.facility_id = f.id
+and f.county_id = c.id
+order by well_name;
+
+List the well names & lat/longs for wells in Weld County by facility name?
+
+SQL: 
+
+select facility_name, well_name,latitude,longitude
+from wells w, counties c, facilities f
+where c.county_name = 'WELD'
+and w.facility_id = f.id
+and f.county_id = c.id
+group by facility_name;
+
+

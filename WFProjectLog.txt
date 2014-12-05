@@ -49,7 +49,7 @@ Having syntax errors in the task I don't understand...
 
 Finally! Breakthrough...
 
-I was very close to getting the import script (import_cogcc.rb) to work on my home machine, but was still encountering
+I was very close to getting the import script (import_cogcc.rake) to work on my home machine, but was still encountering
 a few nagging syntax errors using the CSV class for importing, which is now built into Ruby 2.0. I wanted to go to Hacker
 Hours at Viget to see if I could get some help. But I was having trouble with my environment configuration on my Airbook, and
 still had problems (building native extensions, of course...) but I went anyway. 
@@ -60,7 +60,7 @@ being used in the homebrew configuration of Ruby, and in the path), then I corre
 
 Informed Shane later that night.
 
-12-sept-2014
+10-sept-2014
 
 Got a phone call back from Shane on 9/10. Will be meeting him and the investor he says that will back Wikifrac today.
 
@@ -75,6 +75,67 @@ results of record counts in the 8 tables:
  formations            437
  gastypes               10
  wells              143883
+ 
+12-sept-2014
+
+Met Shane and Mark Lichty, the investor Shane mentioned. Mark is executive producer of anti-fracking film,
+"Groundswell Rising". Met at the Universalist Unitarian church, where Mark showed the film that evening.
+
+No real action items were defined at the meeting, except that Mark said the team needs a "financial guy" to
+oversee/plan the project based on funding; whereas he was better at marketing and fundraising. Shane told me
+I'm the main guy behind Wikifrac, and to keep it going....
+
+24-oct-2014
+
+Meeting w/ Shane and, for first time, Todd Burge. Todd has his own website/IT consulting company,
+and should be a huge help to get this project going. (see nebwebsites.com) Shane assured Todd that I
+will be the project manager of the project. He also showed us an incredible website for California's
+oil and gas public records, DOGGR (see under Wikifrac bookmarks). I will initiate sharing of what
+code and data I have with Todd.
+
+4-nov-2014
+
+Since last meeting, I enhanced a google spreadsheet that Shane created, Todd upload, and I added to.
+Shane's basic worksheet lists desired attributes, has some comparison of FracTracker features to what would be
+in WikiFrac.
+I added more sheets to track tasks, listed the known tasks, and began investigating webscraping.
+Sent several emails to Shane and Todd, with little or no response....
+
+Another meeting will happen today...
+
+11-nov-2014
+
+At the Nov 4 meeting, following action items were created:
+- Rick will come up with 3 month cost estimate on development costs
+- Todd will set up a test website on one of his own servers
+- Once the test website is up, Rick will upload the imported database and his basic Rails app constructed based on the DB model
+- Shane offered to contact Mike Foote, our district representative Colorado House Representative, to discuss legislation that would
+  require the COGCC to make their database available in machine readable format
+  
+During the meeting on Nov 9, Todd suggested we attempt to "scope out the project" with more detailed requirements
+with estimates of time and costs for the requirements. He disagrees with the Agile approach, and ridiculed my estimates
+of monthly developer costs. Shane tried to be diplomatic about it all.
+
+I am beginning to wonder how well Todd and I will be able to work together...
+
+Todd reported that the COGCC database is not very secure, and that he could use an SQL injection attack to get into
+their actual database and download it directly. I commented this would be impressive (and also illegal).
+
+We agreed to conference call again on Friday at 11am, each with our version of estimates.
+
+(for meeting notes, see Google Docs)
+
+2-Dec-2014
+
+I discovered that a key step in the import script, the join table for Fields_has_Formations, is not getting populated.
+The script, /lib/tasks/import_cogcc.rake
+
+
+  
+
+
+ 
+ 
 
 
 

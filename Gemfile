@@ -44,4 +44,6 @@ gem 'immigrant'
 gem 'fastercsv', '~> 1.5.5'
 gem 'pry'
 gem 'pry-debugger'
+gem 'yaml_db'
+
 

@@ -1,0 +1,37 @@
+Need: Develop queries that test the relationships (but what queries are needed?)
+
+The Table counts: 
+Facilities
+Companies
+Fields 
+Counties
+GasTypes
+Wells
+Formations
+
+The Relationships:
+Facilities -> Companies
+Companies 
+Fields 
+Counties
+GasTypes
+Wells
+Formations
+
+Do the total number of wells equal the number of lines in the CSV import file?
+
+    Almost: the import file (alldata_1.csv) has 143,884 input lines, the Wells table has 143,883 records.
+    The script appears to have skipped the first record, for well named FEDERAL.
+
+Does the Field_Formations table look correct?
+    
+    No: the field_formations table has zero records after the import; this is an error in the import script,
+    since inspection of the CSV file shows that a Formation belongs to more than one Field.
+
+Does the Formations table look correct?
+
+    I think so; casual inspection of the Formation names all seem to have the correct Formation Code (when present)
+    
+Does 
+    
+

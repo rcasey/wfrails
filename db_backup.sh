@@ -1,0 +1,1 @@
+mysqldump -u root -p wikifrac_dev > wikifrac_dev.sql
